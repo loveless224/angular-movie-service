@@ -7,6 +7,7 @@ import com.paul.Services.MovieServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "api/v1/movies")
 public class MovieController {
 
