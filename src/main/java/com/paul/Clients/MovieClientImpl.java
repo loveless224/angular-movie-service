@@ -73,7 +73,6 @@ public class MovieClientImpl implements MovieClient{
                 entity,
                 GenreResponse.class
         );
-        System.out.println(response.getStatusCode());
         return response.getBody();
     }
 }
