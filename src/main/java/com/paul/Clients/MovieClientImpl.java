@@ -1,6 +1,6 @@
 package com.paul.Clients;
 
-import com.paul.Models.Movie;
+import com.paul.Models.GenreResponse;
 import com.paul.Models.MovieResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,12 +9,9 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.Collections;
 
 @Service
 public class MovieClientImpl implements MovieClient{
@@ -25,6 +22,9 @@ public class MovieClientImpl implements MovieClient{
 
     @Value("${api.search-movie}")
     private String searchMovieUrl;
+
+    @Value("${api.genre}")
+    private String genreUrl;
 
     @Value("${api.language-EN}")
     private String languageEN;
@@ -53,6 +53,25 @@ public class MovieClientImpl implements MovieClient{
                 HttpMethod.GET,
                 entity,
                 MovieResponse.class
+        );
+        return response.getBody();
+    }
+
+    public GenreResponse getGenres() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + authToken);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        String requestUrl = UriComponentsBuilder
+                .fromHttpUrl(genreUrl)
+                .queryParam("language", languageEN)
+                .toUriString();
+
+        ResponseEntity<GenreResponse> response = restTemplate.exchange(
+                requestUrl,
+                HttpMethod.GET,
+                entity,
+                GenreResponse.class
         );
         return response.getBody();
     }
