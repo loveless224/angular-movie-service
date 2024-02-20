@@ -2,7 +2,6 @@ package com.paul.Services;
 
 import com.paul.Clients.MovieClientImpl;
 import com.paul.Models.GenreResponse;
-import com.paul.Models.Movie;
 import com.paul.Models.MovieResponse;
 import org.springframework.stereotype.Service;
 
@@ -19,4 +18,6 @@ public class MovieServiceImpl implements MovieService{
     public GenreResponse getGenres(){
         return movieClient.getGenres();
     }
+
+    public MovieResponse getMoviesByPopularity() { return movieClient.getMoviesByPopularity(); }
 }

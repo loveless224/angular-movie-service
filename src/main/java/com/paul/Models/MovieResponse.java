@@ -6,7 +6,7 @@ public class MovieResponse {
     private int page;
     private int total_pages;
     private int total_results;
-    private ArrayList<Movie> results; //movies
+    private ArrayList<Movie> results;
 
     public int getPage() {
         return page;

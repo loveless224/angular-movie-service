@@ -24,4 +24,7 @@ public class MovieController {
     public GenreResponse getGenres(){
         return movieService.getGenres();
     }
+
+    @GetMapping("/movies-by-popularity")
+    public MovieResponse getMoviesByPopularity(){ return movieService.getMoviesByPopularity();}
 }
