@@ -17,6 +17,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class MovieClientImpl implements MovieClient{
 
     private final RestTemplate restTemplate;
+    private final static String SORT_BY_POPULARITY = "popularity.desc";
     @Value("${api.base-url}")
     private String baseUrl;
 
@@ -28,6 +29,9 @@ public class MovieClientImpl implements MovieClient{
 
     @Value("${api.language-EN}")
     private String languageEN;
+
+    @Value("${api.discover-movie}")
+    private String discoverMovieUrl;
 
     @Value("${api.token}")
     private String authToken;
@@ -72,6 +76,28 @@ public class MovieClientImpl implements MovieClient{
                 HttpMethod.GET,
                 entity,
                 GenreResponse.class
+        );
+        return response.getBody();
+    }
+
+    public MovieResponse getMoviesByPopularity() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + authToken);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        String requestUrl = UriComponentsBuilder
+                .fromHttpUrl(discoverMovieUrl)
+                .queryParam("include_adult", false)
+                .queryParam("page", 1)
+                .queryParam("sort_by", "popularity.desc")
+                .queryParam("language", languageEN)
+                .toUriString();
+
+        ResponseEntity<MovieResponse> response = restTemplate.exchange(
+                requestUrl,
+                HttpMethod.GET,
+                entity,
+                MovieResponse.class
         );
         return response.getBody();
     }
