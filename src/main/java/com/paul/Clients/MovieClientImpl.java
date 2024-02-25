@@ -33,9 +33,6 @@ public class MovieClientImpl implements MovieClient{
     @Value("${api.discover-movie}")
     private String discoverMovieUrl;
 
-    @Value("${apit.discover-movie-genre}")
-    private String discoverMovieGenreUrl;
-
     @Value("${api.token}")
     private String authToken;
 
@@ -109,9 +106,8 @@ public class MovieClientImpl implements MovieClient{
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Bearer " + authToken);
         HttpEntity<String> entity = new HttpEntity<>(headers);
-
         String requestUrl = UriComponentsBuilder
-                .fromHttpUrl(discoverMovieGenreUrl)
+                .fromHttpUrl(discoverMovieUrl)
                 .queryParam("include_adult", false)
                 .queryParam("page", 1)
                 .queryParam("with_genres", genreId)
