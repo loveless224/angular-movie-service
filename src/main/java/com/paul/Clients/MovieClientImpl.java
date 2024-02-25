@@ -33,6 +33,9 @@ public class MovieClientImpl implements MovieClient{
     @Value("${api.discover-movie}")
     private String discoverMovieUrl;
 
+    @Value("${apit.discover-movie-genre}")
+    private String discoverMovieGenreUrl;
+
     @Value("${api.token}")
     private String authToken;
 
@@ -90,6 +93,29 @@ public class MovieClientImpl implements MovieClient{
                 .queryParam("include_adult", false)
                 .queryParam("page", 1)
                 .queryParam("sort_by", "popularity.desc")
+                .queryParam("language", languageEN)
+                .toUriString();
+
+        ResponseEntity<MovieResponse> response = restTemplate.exchange(
+                requestUrl,
+                HttpMethod.GET,
+                entity,
+                MovieResponse.class
+        );
+        return response.getBody();
+    }
+
+    public MovieResponse getMoviesByGenre(int genreId) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + authToken);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        String requestUrl = UriComponentsBuilder
+                .fromHttpUrl(discoverMovieGenreUrl)
+                .queryParam("include_adult", false)
+                .queryParam("page", 1)
+                .queryParam("with_genres", genreId)
+                .queryParam("sort_by", SORT_BY_POPULARITY)
                 .queryParam("language", languageEN)
                 .toUriString();
 

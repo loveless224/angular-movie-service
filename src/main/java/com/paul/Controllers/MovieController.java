@@ -25,6 +25,11 @@ public class MovieController {
         return movieService.getGenres();
     }
 
+    @GetMapping("/movies-by-genre/{genreId}")
+    public MovieResponse getMoviesByGenre(@PathVariable("genreId") int genreId){
+        return movieService.getMoviesByGenre(genreId);
+    }
+
     @GetMapping("/movies-by-popularity")
     public MovieResponse getMoviesByPopularity(){ return movieService.getMoviesByPopularity();}
 }
