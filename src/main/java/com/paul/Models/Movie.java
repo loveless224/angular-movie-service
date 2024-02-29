@@ -1,6 +1,6 @@
 package com.paul.Models;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Movie {
     private int id;
@@ -9,7 +9,7 @@ public class Movie {
     private String overview;
     private String backdrop_path;
     private String poster_path;
-    private ArrayList<String> genres;
+    private List<Integer> genre_ids;
     private String original_language;
     private String release_date;
     private String vote_average;
@@ -53,12 +53,12 @@ public class Movie {
         this.vote_average = vote_average;
     }
 
-    public ArrayList<String> getGenres() {
-        return genres;
+    public List<Integer> getGenres() {
+        return genre_ids;
     }
 
-    public void setGenres(ArrayList<String> genres) {
-        this.genres = genres;
+    public void setGenres(List<Integer> genre_ids) {
+        this.genre_ids = genre_ids;
     }
     public String getBackdrop_path() {
         return backdrop_path;
@@ -92,12 +92,12 @@ public class Movie {
         this.release_date = release_date;
     }
 
-    public Movie(int id, String original_title, String homepage, String overview, String vote_average, ArrayList<String> genres) {
+    public Movie(int id, String original_title, String homepage, String overview, String vote_average, List<Integer> genre_ids) {
         this.id = id;
         this.original_title = original_title;
         this.homepage = homepage;
         this.overview = overview;
         this.vote_average = vote_average;
-        this.genres = genres;
+        this.genre_ids = genre_ids;
     }
 }

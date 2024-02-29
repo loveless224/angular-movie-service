@@ -20,4 +20,8 @@ public class MovieServiceImpl implements MovieService{
     }
 
     public MovieResponse getMoviesByPopularity() { return movieClient.getMoviesByPopularity(); }
+
+    public MovieResponse getMoviesByGenre(int genreId) {
+        return movieClient.getMoviesByGenre(genreId);
+    }
 }
