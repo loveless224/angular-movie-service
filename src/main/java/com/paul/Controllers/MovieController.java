@@ -1,6 +1,7 @@
 package com.paul.Controllers;
 
 import com.paul.Models.GenreResponse;
+import com.paul.Models.Movie;
 import com.paul.Models.MovieResponse;
 import com.paul.Services.MovieService;
 import org.springframework.web.bind.annotation.*;
@@ -32,4 +33,9 @@ public class MovieController {
 
     @GetMapping("/movies-by-popularity")
     public MovieResponse getMoviesByPopularity(){ return movieService.getMoviesByPopularity();}
+
+    @GetMapping("/movie-by-id/{id}")
+    public Movie getMovieById(@PathVariable("id") int id){
+        return movieService.getMovieById(id);
+    }
 }

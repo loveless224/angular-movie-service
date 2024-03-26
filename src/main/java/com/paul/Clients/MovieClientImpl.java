@@ -1,6 +1,7 @@
 package com.paul.Clients;
 
 import com.paul.Models.GenreResponse;
+import com.paul.Models.Movie;
 import com.paul.Models.MovieResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,6 +33,9 @@ public class MovieClientImpl implements MovieClient{
 
     @Value("${api.discover-movie}")
     private String discoverMovieUrl;
+
+    @Value("${api.id}")
+    private String idUrl;
 
     @Value("${api.token}")
     private String authToken;
@@ -120,6 +124,25 @@ public class MovieClientImpl implements MovieClient{
                 HttpMethod.GET,
                 entity,
                 MovieResponse.class
+        );
+        return response.getBody();
+    }
+
+    public Movie getMovieById(int id) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + authToken);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        String requestUrl = UriComponentsBuilder
+                .fromHttpUrl(idUrl)
+                .queryParam("language", languageEN)
+                .path(Integer.toString(id))
+                .toUriString();
+
+        ResponseEntity<Movie> response = restTemplate.exchange(
+                requestUrl,
+                HttpMethod.GET,
+                entity,
+                Movie.class
         );
         return response.getBody();
     }
