@@ -92,6 +92,8 @@ public class Movie {
         this.release_date = release_date;
     }
 
+    public Movie() {}
+
     public Movie(int id, String original_title, String homepage, String overview, String vote_average, List<Integer> genre_ids) {
         this.id = id;
         this.original_title = original_title;

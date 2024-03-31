@@ -2,6 +2,7 @@ package com.paul.Clients;
 
 import com.paul.Models.GenreResponse;
 import com.paul.Models.Movie;
+import com.paul.Models.MovieByIdResponse;
 import com.paul.Models.MovieResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -128,7 +129,7 @@ public class MovieClientImpl implements MovieClient{
         return response.getBody();
     }
 
-    public Movie getMovieById(int id) {
+    public MovieByIdResponse getMovieById(int id) {
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Bearer " + authToken);
         HttpEntity<String> entity = new HttpEntity<>(headers);
@@ -138,11 +139,11 @@ public class MovieClientImpl implements MovieClient{
                 .path(Integer.toString(id))
                 .toUriString();
 
-        ResponseEntity<Movie> response = restTemplate.exchange(
+        ResponseEntity<MovieByIdResponse> response = restTemplate.exchange(
                 requestUrl,
                 HttpMethod.GET,
                 entity,
-                Movie.class
+                MovieByIdResponse.class
         );
         return response.getBody();
     }
