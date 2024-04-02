@@ -1,7 +1,10 @@
 package com.paul.Services;
 
 import com.paul.Clients.MovieClientImpl;
+import com.paul.Mappers.MovieByIdToMovie;
 import com.paul.Models.GenreResponse;
+import com.paul.Models.Movie;
+import com.paul.Models.MovieByIdResponse;
 import com.paul.Models.MovieResponse;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +26,10 @@ public class MovieServiceImpl implements MovieService{
 
     public MovieResponse getMoviesByGenre(int genreId) {
         return movieClient.getMoviesByGenre(genreId);
+    }
+
+    public Movie getMovieById(int id) {
+        MovieByIdResponse movie = movieClient.getMovieById(id);
+        return MovieByIdToMovie.mapMovieByIdToMovie(movie);
     }
 }
