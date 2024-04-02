@@ -2,33 +2,37 @@ package com.paul.Models;
 
 import java.util.List;
 
+/**
+ * Represents a movie response object containing detailed information about a movie.
+ */
 public class MovieByIdResponse {
     private boolean adult;
-    private String backdropPath;
-    private Collection belongsToCollection;
+    private String backdrop_path;
+    private Object belongs_to_collection;
     private int budget;
     private List<Genre> genres;
     private String homepage;
     private int id;
-    private String imdbId;
-    private String originalLanguage;
-    private String originalTitle;
+    private String imdb_id;
+    private String original_language;
+    private String original_title;
     private String overview;
     private double popularity;
-    private String posterPath;
-    private List<ProductionCompany> productionCompanies;
-    private List<ProductionCountry> productionCountries;
-    private String releaseDate;
+    private String poster_path;
+    private List<ProductionCompany> production_companies;
+    private List<ProductionCountry> production_countries;
+    private String release_date;
     private int revenue;
     private int runtime;
-    private List<SpokenLanguage> spokenLanguages;
+    private List<SpokenLanguage> spoken_languages;
     private String status;
     private String tagline;
     private String title;
     private boolean video;
-    private double voteAverage;
-    private int voteCount;
+    private double vote_average;
+    private int vote_count;
 
+    // Getters and setters
     public boolean isAdult() {
         return adult;
     }
@@ -37,20 +41,20 @@ public class MovieByIdResponse {
         this.adult = adult;
     }
 
-    public String getBackdropPath() {
-        return backdropPath;
+    public String getBackdrop_path() {
+        return backdrop_path;
     }
 
-    public void setBackdropPath(String backdropPath) {
-        this.backdropPath = backdropPath;
+    public void setBackdrop_path(String backdrop_path) {
+        this.backdrop_path = backdrop_path;
     }
 
-    public Collection getBelongsToCollection() {
-        return belongsToCollection;
+    public Object getBelongs_to_collection() {
+        return belongs_to_collection;
     }
 
-    public void setBelongsToCollection(Collection belongsToCollection) {
-        this.belongsToCollection = belongsToCollection;
+    public void setBelongs_to_collection(Object belongs_to_collection) {
+        this.belongs_to_collection = belongs_to_collection;
     }
 
     public int getBudget() {
@@ -85,28 +89,28 @@ public class MovieByIdResponse {
         this.id = id;
     }
 
-    public String getImdbId() {
-        return imdbId;
+    public String getImdb_id() {
+        return imdb_id;
     }
 
-    public void setImdbId(String imdbId) {
-        this.imdbId = imdbId;
+    public void setImdb_id(String imdb_id) {
+        this.imdb_id = imdb_id;
     }
 
-    public String getOriginalLanguage() {
-        return originalLanguage;
+    public String getOriginal_language() {
+        return original_language;
     }
 
-    public void setOriginalLanguage(String originalLanguage) {
-        this.originalLanguage = originalLanguage;
+    public void setOriginal_language(String original_language) {
+        this.original_language = original_language;
     }
 
-    public String getOriginalTitle() {
-        return originalTitle;
+    public String getOriginal_title() {
+        return original_title;
     }
 
-    public void setOriginalTitle(String originalTitle) {
-        this.originalTitle = originalTitle;
+    public void setOriginal_title(String original_title) {
+        this.original_title = original_title;
     }
 
     public String getOverview() {
@@ -125,36 +129,36 @@ public class MovieByIdResponse {
         this.popularity = popularity;
     }
 
-    public String getPosterPath() {
-        return posterPath;
+    public String getPoster_path() {
+        return poster_path;
     }
 
-    public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
     }
 
-    public List<ProductionCompany> getProductionCompanies() {
-        return productionCompanies;
+    public List<ProductionCompany> getProduction_companies() {
+        return production_companies;
     }
 
-    public void setProductionCompanies(List<ProductionCompany> productionCompanies) {
-        this.productionCompanies = productionCompanies;
+    public void setProduction_companies(List<ProductionCompany> production_companies) {
+        this.production_companies = production_companies;
     }
 
-    public List<ProductionCountry> getProductionCountries() {
-        return productionCountries;
+    public List<ProductionCountry> getProduction_countries() {
+        return production_countries;
     }
 
-    public void setProductionCountries(List<ProductionCountry> productionCountries) {
-        this.productionCountries = productionCountries;
+    public void setProduction_countries(List<ProductionCountry> production_countries) {
+        this.production_countries = production_countries;
     }
 
-    public String getReleaseDate() {
-        return releaseDate;
+    public String getRelease_date() {
+        return release_date;
     }
 
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
     }
 
     public int getRevenue() {
@@ -173,12 +177,12 @@ public class MovieByIdResponse {
         this.runtime = runtime;
     }
 
-    public List<SpokenLanguage> getSpokenLanguages() {
-        return spokenLanguages;
+    public List<SpokenLanguage> getSpoken_languages() {
+        return spoken_languages;
     }
 
-    public void setSpokenLanguages(List<SpokenLanguage> spokenLanguages) {
-        this.spokenLanguages = spokenLanguages;
+    public void setSpoken_languages(List<SpokenLanguage> spoken_languages) {
+        this.spoken_languages = spoken_languages;
     }
 
     public String getStatus() {
@@ -213,170 +217,135 @@ public class MovieByIdResponse {
         this.video = video;
     }
 
-    public double getVoteAverage() {
-        return voteAverage;
+    public double getVote_average() {
+        return vote_average;
     }
 
-    public void setVoteAverage(double voteAverage) {
-        this.voteAverage = voteAverage;
+    public void setVote_average(double vote_average) {
+        this.vote_average = vote_average;
     }
 
-    public int getVoteCount() {
-        return voteCount;
+    public int getVote_count() {
+        return vote_count;
     }
 
-    public void setVoteCount(int voteCount) {
-        this.voteCount = voteCount;
+    public void setVote_count(int vote_count) {
+        this.vote_count = vote_count;
     }
 
-    public static class Collection {
-        private int id;
-        private String name;
-        private String posterPath;
-        private String backdropPath;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getPosterPath() {
-            return posterPath;
-        }
-
-        public void setPosterPath(String posterPath) {
-            this.posterPath = posterPath;
-        }
-
-        public String getBackdropPath() {
-            return backdropPath;
-        }
-
-        public void setBackdropPath(String backdropPath) {
-            this.backdropPath = backdropPath;
-        }
-    }
 
     public static class Genre {
         private int id;
         private String name;
-    
+
+        // Getters and setters
         public int getId() {
             return id;
         }
-    
+
         public void setId(int id) {
             this.id = id;
         }
-    
+
         public String getName() {
             return name;
         }
-    
+
         public void setName(String name) {
             this.name = name;
         }
     }
-    
+
     public static class ProductionCompany {
         private int id;
-        private String logoPath;
+        private String logo_path;
         private String name;
-        private String originCountry;
-    
+        private String origin_country;
+
+        // Getters and setters
         public int getId() {
             return id;
         }
-    
+
         public void setId(int id) {
             this.id = id;
         }
-    
-        public String getLogoPath() {
-            return logoPath;
+
+        public String getLogo_path() {
+            return logo_path;
         }
-    
-        public void setLogoPath(String logoPath) {
-            this.logoPath = logoPath;
+
+        public void setLogo_path(String logo_path) {
+            this.logo_path = logo_path;
         }
-    
+
         public String getName() {
             return name;
         }
-    
+
         public void setName(String name) {
             this.name = name;
         }
-    
-        public String getOriginCountry() {
-            return originCountry;
+
+        public String getOrigin_country() {
+            return origin_country;
         }
-    
-        public void setOriginCountry(String originCountry) {
-            this.originCountry = originCountry;
+
+        public void setOrigin_country(String origin_country) {
+            this.origin_country = origin_country;
         }
     }
-    
+
     public static class ProductionCountry {
         private String iso_3166_1;
         private String name;
-    
+
+        // Getters and setters
         public String getIso_3166_1() {
             return iso_3166_1;
         }
-    
+
         public void setIso_3166_1(String iso_3166_1) {
             this.iso_3166_1 = iso_3166_1;
         }
-    
+
         public String getName() {
             return name;
         }
-    
+
         public void setName(String name) {
             this.name = name;
         }
     }
-    
+
     public static class SpokenLanguage {
-        private String englishName;
+        private String english_name;
         private String iso_639_1;
         private String name;
-    
-        public String getEnglishName() {
-            return englishName;
+
+        // Getters and setters
+        public String getEnglish_name() {
+            return english_name;
         }
-    
-        public void setEnglishName(String englishName) {
-            this.englishName = englishName;
+
+        public void setEnglish_name(String english_name) {
+            this.english_name = english_name;
         }
-    
+
         public String getIso_639_1() {
             return iso_639_1;
         }
-    
+
         public void setIso_639_1(String iso_639_1) {
             this.iso_639_1 = iso_639_1;
         }
-    
+
         public String getName() {
             return name;
         }
-    
+
         public void setName(String name) {
             this.name = name;
         }
     }
-    
 }
