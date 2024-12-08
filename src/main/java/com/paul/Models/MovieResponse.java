@@ -7,6 +7,7 @@ public class MovieResponse {
     private int total_pages;
     private int total_results;
     private ArrayList<Movie> results;
+    private VideosResponse videos;
 
     public int getPage() {
         return page;
@@ -38,5 +39,14 @@ public class MovieResponse {
     public void setResults(ArrayList<Movie> results) {
         this.results = results;
     }
+
+    public VideosResponse getVideos() {
+        return videos;
+    }
+
+    public void setVideos(VideosResponse videos) {
+        this.videos = videos;
+    }
+
 
 }

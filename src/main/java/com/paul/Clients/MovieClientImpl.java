@@ -19,6 +19,8 @@ public class MovieClientImpl implements MovieClient{
 
     private final RestTemplate restTemplate;
     private final static String SORT_BY_POPULARITY = "popularity.desc";
+    private final static String APPEND_TO_RESPONSE = "append_to_response";
+    private final static String VIDEOS = "videos";
     @Value("${api.base-url}")
     private String baseUrl;
 
@@ -112,7 +114,7 @@ public class MovieClientImpl implements MovieClient{
         HttpEntity<String> entity = new HttpEntity<>(headers);
         String requestUrl = UriComponentsBuilder
                 .fromHttpUrl(discoverMovieUrl)
-                .queryParam("include_adult", false)
+                .queryParam("include_adult", true)
                 .queryParam("page", 1)
                 .queryParam("with_genres", genreId)
                 .queryParam("sort_by", SORT_BY_POPULARITY)
@@ -135,6 +137,7 @@ public class MovieClientImpl implements MovieClient{
         String requestUrl = UriComponentsBuilder
                 .fromHttpUrl(idUrl)
                 .queryParam("language", languageEN)
+                .queryParam(APPEND_TO_RESPONSE, VIDEOS)
                 .path(Integer.toString(id))
                 .toUriString();
 
