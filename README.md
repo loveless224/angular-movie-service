@@ -12,12 +12,12 @@ This project is a Movie Finder application that integrates with TheMovieDB API t
 ## Tech Stack
 
 - **Back-End**: 
-  - Java Spring Boot (Spring Web, Spring Security, Spring Data JPA)
+  - Java Spring Boot (angular-movie-service)
   - TheMovieDB API integration
   - RESTful API for movie data
   
 - **Front-End**:
-  - Angular (Angular CLI)
+  - Angular (angular-movie-lib)
   - HTML, CSS, TypeScript
   - Bootstrap (for UI components)
 
