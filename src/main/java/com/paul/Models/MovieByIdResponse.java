@@ -2,9 +2,6 @@ package com.paul.Models;
 
 import java.util.List;
 
-/**
- * Represents a movie response object containing detailed information about a movie.
- */
 public class MovieByIdResponse {
     private boolean adult;
     private String backdrop_path;
@@ -31,8 +28,9 @@ public class MovieByIdResponse {
     private boolean video;
     private double vote_average;
     private int vote_count;
+    private VideosResponse videos;
 
-    // Getters and setters
+
     public boolean isAdult() {
         return adult;
     }
@@ -40,6 +38,11 @@ public class MovieByIdResponse {
     public void setAdult(boolean adult) {
         this.adult = adult;
     }
+
+
+    public void setVideos(VideosResponse videos){this.videos = videos;}
+
+    public VideosResponse getVideos(){ return videos; }
 
     public String getBackdrop_path() {
         return backdrop_path;

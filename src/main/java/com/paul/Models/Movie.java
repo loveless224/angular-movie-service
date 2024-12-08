@@ -13,6 +13,25 @@ public class Movie {
     private String original_language;
     private String release_date;
     private String vote_average;
+    private VideosResponse videos;
+    private String youtubeUrl;
+
+    public List<Integer> getGenre_ids() {
+        return genre_ids;
+    }
+
+    public void setGenre_ids(List<Integer> genre_ids) {
+        this.genre_ids = genre_ids;
+    }
+
+    public String getYoutubeUrl() {
+        return youtubeUrl;
+    }
+
+    public void setYoutubeUrl(String youtubeUrl) {
+        this.youtubeUrl = youtubeUrl;
+    }
+
     public int getId() {
         return id;
     }
@@ -83,6 +102,9 @@ public class Movie {
     public void setOriginal_language(String original_language) {
         this.original_language = original_language;
     }
+
+    public VideosResponse getVideos(){return videos;}
+    public void setVideos(VideosResponse videos){this.videos = videos;}
 
     public String getRelease_date() {
         return release_date;
